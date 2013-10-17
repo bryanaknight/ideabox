@@ -1,3 +1,4 @@
+require './lib/idea_box/idea'
 require 'yaml/store'
 
 class IdeaStore
@@ -6,6 +7,16 @@ class IdeaStore
     database.transaction do
       database['ideas'].delete_at(position)
     end
+  end
+
+  def self.destroy_database
+    database.transaction do |db|
+      database['ideas'] = []
+    end
+  end
+
+  def self.search(search_tag)
+    all.select { |idea| idea.to_h["tags"].include? search_tag }
   end
 
   def self.find(id)

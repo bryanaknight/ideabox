@@ -1,0 +1,24 @@
+<title>Ideabox</title>
+
+<h1>Ideabox</h1>
+
+<h3>Sorted Ideas</h3>
+
+<ul>
+  <% tagged_ideas.each do |idea| %>
+      <li>
+        <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
+        <input type='submit' value="Like?"/>
+        </form>
+        <p>
+          Title: <%= idea.title %><br/>
+        </p>
+        <p>
+          Description: <%= idea.description %><br/>
+        </p>
+        <p>
+          Tag: <%= idea.tags%><br/>
+        </p>
+       </li> 
+   <% end %>     
+</ul>

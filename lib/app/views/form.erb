@@ -9,7 +9,14 @@
   <% if idea.id %>
     <input type="hidden" name="_method" value="PUT" />
   <% end %>
-  <input type='text' name='idea[title]' value="<%= idea.title %>"/><br/>
-  <textarea name='idea[description]'><%= idea.description %></textarea><br/>
+  <input type='text' name='idea[title]' value="<%= idea.title %>"/> Name <br/>
+  <textarea name='idea[description]'><%= idea.description %></textarea> Description <br/>
+  <textarea name='idea[tags]'><%= idea.tags %></textarea> Tag <br/>
   <input type='submit'/>
 </form>
+
+<form action='/search' method='GET'>
+<input type= 'text' name = 'search_tag'>
+<input type='submit' value ='Search by Tag'/>
+</form>
+

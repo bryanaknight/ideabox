@@ -4,4 +4,4 @@ require 'bundler'
 Bundler.require
 
 
-run IdeaBoxApp
+run IdeaBox
