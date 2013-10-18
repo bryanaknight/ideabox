@@ -1,6 +1,12 @@
 
-  
+  <head>
     <title>IdeaBox</title>
+  </head>
+    <style>
+    body {background-color: blue; 
+          color: yellow;
+    }
+  </style>
   <body>
     <h1>IdeaBox</h1>
       <%= erb :form, locals: {idea: idea, id: idea.id} %>

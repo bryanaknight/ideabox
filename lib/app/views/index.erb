@@ -8,7 +8,7 @@
           <% ideas.each do |idea| %>
             <li>
               <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
-                <input type='submit' value="Like?"/>
+                <input type='submit' value="Like!"/>
               </form>
               Title: <%= idea.title %><br/>
               Description: <%= idea.description %><br/>

@@ -1,0 +1,28 @@
+<title>Ideabox</title>
+<style>
+    body {background-color: orange; 
+          color: black;
+    }
+</style>
+
+<h1>Ideabox</h1>
+  <% if lookup_ideas.any? %>
+    <h3>Ideas matching <%= params["lookup"] %></h3>
+
+    <ul>
+      <% lookup_ideas.each do |idea| %>
+        <li>
+          <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
+          <input type='submit' value="Like?"/>
+          </form>
+          <p>Title: <%= idea.title %></p>
+          <p>Description: <%= idea.description %></p>
+          <p>Tag: <%= idea.tags%></p>
+         </li> 
+      <%end %>
+    </ul>
+  <% elsif no_ideas %>
+    <p> Sorry, no ideas are in the database </p>
+  <% else %>
+    <p> Sorry, no ideas match <%= params["lookup"] %>! </p>
+  <% end %>     

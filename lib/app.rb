@@ -49,4 +49,10 @@ class IdeaBox < Sinatra::Base
     erb :search, locals: {tagged_ideas: tagged_ideas}
   end
 
+  get '/lookup' do
+    lookup_ideas = IdeaStore.lookup(params[:lookup])
+    no_ideas = IdeaStore.all.none?
+    erb :lookup, locals: {lookup_ideas: lookup_ideas, no_ideas: no_ideas}
+  end
+
 end

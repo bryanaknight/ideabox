@@ -11,12 +11,8 @@ class IdeaStore
 
   def self.destroy_database
     database.transaction do |db|
-      database['ideas'] = []
+      db['ideas'] = []
     end
-  end
-
-  def self.search(search_tag)
-    all.select { |idea| idea.to_h["tags"].include? search_tag }
   end
 
   def self.find(id)
@@ -64,6 +60,18 @@ class IdeaStore
     database.transaction do
       database['ideas'] << data
     end
+  end
+
+  def self.lookup(keyword)
+      all.select do |idea|
+          idea.to_h["description"].include?(keyword) || 
+          idea.to_h["title"].include?(keyword) || 
+          idea.to_h["tags"].include?(keyword)
+        end
+  end
+
+  def self.search(search_tag)
+    all.select { |idea| idea.to_h["tags"].include? search_tag }
   end
 
 end
