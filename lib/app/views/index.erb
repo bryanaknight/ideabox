@@ -1,23 +1,30 @@
+<head>
+  <title>IdeaBox</title>
+  <style type= "text/css">
+   
+  </style>
+</head>
+<h1>IdeaBox</h1>
+<p>
+  <img src="http://www.ideachampions.com/weblogs/ideas-in-box.jpg" width= "120" height="100">
+</p>
+<%= erb :form, locals: {idea: idea} %>
+   <h3>Existing Ideas</h3>
 
-    <title>IdeaBox</title>
-    <h1>IdeaBox</h1>
-    <%= erb :form, locals: {idea: idea} %>
-       <h3>Existing Ideas</h3>
-
-        <ul>
-          <% ideas.each do |idea| %>
-            <li>
-              <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
-                <input type='submit' value="Like!"/>
-              </form>
-              Title: <%= idea.title %><br/>
-              Description: <%= idea.description %><br/>
-              Tag: <%= idea.tags%><br/>
-              <a href="/<%= idea.id %>/edit">Edit</a>
-              <form action='/<%= idea.id %>' method='POST'>
-                <input type="hidden" name="_method" value="DELETE">
-                <input type='submit' value="delete"/>
-              </form>
-            </li>
-          <% end %>
-        </ul>
+    <ul>
+      <% ideas.each do |idea| %>
+        <li>
+          <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
+          <input type='submit' value="Like!"/>
+          </form>
+          Title: <%= idea.title %><br/>
+          Description: <%= idea.description %><br/>
+          Tag: <%= idea.tags%><br/>
+          <a href="/<%= idea.id %>/edit">Edit</a>
+          <form action='/<%= idea.id %>' method='POST'>
+          <input type="hidden" name="_method" value="DELETE">
+          <input type='submit' value="delete"/>
+          </form>
+        </li>
+      <% end %>
+    </ul>

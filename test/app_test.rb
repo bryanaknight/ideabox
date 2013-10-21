@@ -1,3 +1,5 @@
+ENV['RACK_ENV'] = 'test'
+
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
@@ -26,9 +28,13 @@ class AppTest < Minitest::Test
     assert (last_response.body =~ /Existing Ideas/)
     assert (last_response.body =~ /Your Idea:/)
     assert (last_response.body =~ /Tag/)
-    assert (last_response.body =~ /Title/)
+    assert (last_response.body =~ /Name/)
     assert (last_response.body =~ /Description/)
     assert (last_response.body =~ /IdeaBox/)
+  end
+
+  def teardown
+    IdeaStore.destroy_database
   end
 
 end

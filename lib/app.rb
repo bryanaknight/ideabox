@@ -55,4 +55,10 @@ class IdeaBox < Sinatra::Base
     erb :lookup, locals: {lookup_ideas: lookup_ideas, no_ideas: no_ideas}
   end
 
+  get '/tags' do 
+    idea_tags = IdeaStore.all_tags
+    idea = IdeaStore.new
+    erb :tags, locals: {idea_tags: idea_tags, ideas: IdeaStore} 
+  end
+
 end

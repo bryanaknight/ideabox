@@ -1,0 +1,28 @@
+<html>
+<title>Ideabox</title>
+<style>
+    body {
+      background-color: green; 
+      color: fuchsia;
+      }
+</style>
+
+<h1>Ideabox</h1>
+
+<h3>Tags</h3>
+    <ul>
+      <% idea_tags.each do |tag| %>
+       <li> Tag: <%= tag.upcase %> <br />
+            <% ideas.tag_hash[tag].each do |idea| %>
+              <ul><li><%= idea.title %> </li></ul>
+            <% end %>
+        </li><br />
+      <% end %>
+    </ul>
+</html>
+
+
+
+
+
+  

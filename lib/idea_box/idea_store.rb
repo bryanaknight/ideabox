@@ -46,14 +46,30 @@ class IdeaStore
     end
   end
 
-  def self.database
-    return @database if @database
-
-    @database = YAML::Store.new('db/ideabox')
-    @database.transaction do
-      @database['ideas'] ||= []
+  def self.all_tags
+    all_tags = []
+    all.each do |idea|
+      idea.tags.split(",").each do |tag|
+        all_tags << tag
+      end
     end
-    @database
+    all_tags.uniq
+  end
+
+  def self.tag_hash
+    all_tags.each_with_object({}) do |tag, hash|
+      hash[tag] = all.select do |idea|
+        idea.to_h["tags"].include?(tag)
+      end
+    end
+  end
+
+  def self.database 
+    @database ||= if ENV['RACK_ENV'] == "test"
+      YAML::Store.new("db/test_ideabox")
+    else
+      YAML::Store.new('db/ideabox')
+    end
   end
 
   def self.create(data)
