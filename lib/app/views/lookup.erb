@@ -12,9 +12,6 @@
     <ul>
       <% lookup_ideas.each do |idea| %>
         <li>
-          <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
-          <input type='submit' value="Like?"/>
-          </form>
           <p>Title: <%= idea.title %></p>
           <p>Description: <%= idea.description %></p>
           <p>Tag: <%= idea.tags%></p>

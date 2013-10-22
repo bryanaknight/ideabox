@@ -44,11 +44,6 @@ class IdeaBox < Sinatra::Base
     redirect '/'
   end
 
-  get '/search' do 
-    tagged_ideas = IdeaStore.search(params[:search_tag])
-    erb :search, locals: {tagged_ideas: tagged_ideas}
-  end
-
   get '/lookup' do
     lookup_ideas = IdeaStore.lookup(params[:lookup])
     no_ideas = IdeaStore.all.none?
@@ -59,6 +54,11 @@ class IdeaBox < Sinatra::Base
     idea_tags = IdeaStore.all_tags
     idea = IdeaStore.new
     erb :tags, locals: {idea_tags: idea_tags, ideas: IdeaStore} 
+  end
+
+  get '/dates' do
+    dates = IdeaStore.days
+    erb :dates, locals: {dates: dates, ideas: IdeaStore}
   end
 
 end

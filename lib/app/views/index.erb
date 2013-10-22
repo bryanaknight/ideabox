@@ -20,6 +20,8 @@
           Title: <%= idea.title %><br/>
           Description: <%= idea.description %><br/>
           Tag: <%= idea.tags%><br/>
+          Created at: <%= idea.created_at.strftime("%-m/%e/%y") %><br/>
+          Updated at: <%= idea.updated_at.strftime("%-m/%e/%y") %><br/>
           <a href="/<%= idea.id %>/edit">Edit</a>
           <form action='/<%= idea.id %>' method='POST'>
           <input type="hidden" name="_method" value="DELETE">

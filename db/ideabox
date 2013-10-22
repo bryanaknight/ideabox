@@ -1,14 +1,32 @@
 ---
 ideas:
-- title: Idea 1
+- title: idea 1
   description: ''
-  tags: '1'
-- title: Idea 2
+  rank: 1
+  tags: ''
+  updated_at: 2013-10-21 22:58:22.000000000 -06:00
+  created_at: 2013-10-21 19:29:22.000000000 -06:00
+- title: idea 2
   description: ''
-  tags: '1'
-- title: IDea 3
+  rank: 0
+  tags: ''
+  updated_at: 2013-10-20 19:29:27.000000000 -06:00
+  created_at: 2013-10-20 19:29:27.000000000 -06:00
+- title: idea 3
   description: ''
-  tags: '1'
-- title: Idea 4
+  rank: 0
+  tags: ''
+  updated_at: 2013-10-20 19:29:30.000000000 -06:00
+  created_at: 2013-10-20 19:29:30.000000000 -06:00
+- title: ''
   description: ''
-  tags: '2'
+  rank: 0
+  tags: '3'
+  updated_at: 2013-10-21 22:46:17.000000000 -06:00
+  created_at: 2013-10-21 22:46:17.000000000 -06:00
+- title: ''
+  description: ''
+  rank: 0
+  tags: '3'
+  updated_at: 2013-10-21 22:46:19.000000000 -06:00
+  created_at: 2013-10-21 22:46:19.000000000 -06:00

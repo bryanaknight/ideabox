@@ -1,0 +1,21 @@
+<html>
+<title>Ideabox</title>
+<style>
+    body {
+      background-color: red; 
+      color: green;
+      }
+</style>
+
+<h1>Ideabox</h1>
+
+<h3>Ideas by Date</h3>
+
+  <% dates.each do |date| %>
+      Date: <%= date %> <br />
+        <% ideas.date_hash[date].each do |idea| %>
+          <ul><li><%= idea.title %></li></ul>
+        <% end %>
+  <% end %>
+
+</html>
