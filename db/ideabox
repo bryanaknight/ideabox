@@ -10,9 +10,9 @@ ideas:
   groups: Home and Garden
 - title: Pumpkin Carving
   description: Carve pumpkins!
-  rank: 1
+  rank: 2
   tags: Fun, Friends, Pumpkins
-  updated_at: 2013-10-23 14:18:17.000000000 -06:00
+  updated_at: 2013-10-23 16:51:59.000000000 -06:00
   created_at: 2013-10-22 13:49:50.000000000 -06:00
   group: Leisure
 - title: Costume Shopping
@@ -42,4 +42,11 @@ ideas:
   tags: Food
   updated_at: 2013-10-23 15:48:52.000000000 -06:00
   created_at: 2013-10-23 15:48:52.000000000 -06:00
+  group: Groupless
+- title: Andy
+  description: Andy is awesome
+  rank: 0
+  tags: '#friends'
+  updated_at: 2013-10-23 16:51:49.000000000 -06:00
+  created_at: 2013-10-23 16:51:49.000000000 -06:00
   group: Groupless

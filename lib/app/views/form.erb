@@ -1,3 +1,5 @@
+<div class="header">
+<div class="idea_submission">
 <form action='/<%= idea.id %>' method='POST'>
   <p>
     <% if idea.id %>
@@ -29,9 +31,11 @@
   <button type='submit' class='submit_button'/>Submit</button>
   </form>
 </div>
+</div>
 
   <%unless idea.id %>
 
+<div class="idea_box_controls">
 <form action='/tags' method='GET'>
 <button type='submit' class='spooky'style="background-color:lightgreen">See all ideas by Tag</button>
 </form>
@@ -75,7 +79,9 @@
 
 
 </form>
+</div>
 <%end%>
+</div>
 
 
 
