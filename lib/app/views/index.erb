@@ -7,7 +7,7 @@
 
     <img src="http://www.idea-sandbox.com/blog_images/lightbulb-o-lantern.jpg" class="logo">
 
-    <h4 style="color:black;margin-bottom:40px;" align="center">Store your ideas in a virtual box...at your own risk</h4>
+    <h4 style="color:black;margin-bottom:40px;" align="center">Store your ideas in a virtual box...if you dare</h4>
 
 
 <%= erb :form, locals: {idea: idea} %>
@@ -22,8 +22,10 @@
           Title: <%= idea.title %><br/>
           Description: <%= idea.description %><br/>
           Tag: <%= idea.tags%><br/>
+          Group: <%= idea.group %><br/>
           Created at: <%= idea.created_at.strftime("%-m/%e/%y") %><br/>
           Updated at: <%= idea.updated_at.strftime("%-m/%e/%y") %><br/>
+
           <a href="/<%= idea.id %>/edit">Edit</a>
           <form action='/<%= idea.id %>' method='POST'>
           <input type="hidden" name="_method" value="DELETE">

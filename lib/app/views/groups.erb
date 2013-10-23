@@ -1,0 +1,15 @@
+<h1>Ideabox</h1>
+
+<h3>Ideas by Group</h3>
+      
+    
+   <ul> 
+    <% matching_ideas.each do |idea| %>
+      <li>
+      Title: <%= idea.title %><br/>
+      Description: <%= idea.description %><br/>
+      Tag: <%= idea.tags%><br/>
+      Group: <%= idea.group%><br/>
+     </li>
+  <% end %>
+  </ul>

@@ -12,8 +12,28 @@
   <input type='text' name='idea[title]' value="<%= idea.title %>"/> Name <br/>
   <textarea name='idea[description]'><%= idea.description %></textarea> Description <br/>
   <textarea name='idea[tags]'><%= idea.tags %></textarea> Tag <br/>
-  <form action = "dropdown">
-  <select name="group">
+
+  <select name="idea[groups]">
+  <option value="Groupless">Groupless</option>
+  <option value="Travel">Travel</option>
+  <option value="Home and Garden">Home and Garden</option>
+  <option value="Culinary">Culinary</option>
+  <option value="Business">Business</option>
+  <option value="Shopping">Shopping</option>
+  <option value="Fitness">Fitness</option>
+  <option value="Health and Wellness">Health and Wellness</option>
+</select><br/>
+
+  <input type='submit'/>
+</form>
+
+<form action='/lookup' method='GET'>
+<input type= 'text' name = 'lookup'>
+<input type='submit' value ='Search by Keyword or Phrase'/>
+</form>
+
+<form action = '/groups' method='GET' style='display: inline'>
+ <select name="groups">
   <option value="Groupless">Groupless</option>
   <option value="Travel">Travel</option>
   <option value="Home and Garden">Home and Garden</option>
@@ -23,20 +43,16 @@
   <option value="Fitness">Fitness</option>
   <option value="Health and Wellness">Health and Wellness</option>
 </select>
-</form>
-  <input type='submit'/>
+<input type='submit' value ='Search by Group'/>
 </form>
 
-<form action='/lookup' method='GET'>
-<input type= 'text' name = 'lookup'>
-<input type='submit' value ='Search by Keyword or Phrase'/>
-</form>
 
 <form action='/tags' method='GET'>
 <button type='submit'>Tags</button>
 </form>
 
 <form action = '/dates'>
+  <select name="search_day">
   <option value="Sunday">Sunday</option>
   <option value="Monday">Monday</option>
   <option value="Tuesday">Tuesday</option>
@@ -45,8 +61,9 @@
   <option value="Friday">Friday</option>
   <option value="Saturday">Saturday</option>
 </select>
-<button type='submit'>See ideas!</button>
+<button type='submit'>See ideas by day!</button>
 </form>
+
 
 </form>
 

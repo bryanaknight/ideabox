@@ -12,3 +12,10 @@ ideas:
   tags: Fun, Friends, Pumpkins
   updated_at: 2013-10-22 15:05:08.000000000 -06:00
   created_at: 2013-10-22 13:49:50.000000000 -06:00
+- title: Costume Shopping
+  description: Get a costume
+  rank: 0
+  tags: Fun
+  updated_at: 2013-10-22 18:34:10.000000000 -06:00
+  created_at: 2013-10-22 18:34:10.000000000 -06:00
+  group: Shopping

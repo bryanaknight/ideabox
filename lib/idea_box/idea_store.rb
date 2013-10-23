@@ -60,6 +60,12 @@ class IdeaStore
       all_tags.uniq
     end
 
+    def find_by_group(group)
+      all.select do |idea|
+        idea.group == group
+      end
+    end
+
     def days
       all.collect do |idea|
         idea.created_at_day(idea.created_at)

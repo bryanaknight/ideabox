@@ -45,9 +45,14 @@ class IdeaStoreTest <Minitest::Test
     assert_equal ["sports", "food", "school", " sports"], result.keys
   end
 
-  def test_days
-    result = IdeaStore.days  
-    assert_equal ["10/21/2013", "11/19/2007"], result
+  def test_it_searches_for_ideas_by_group
+    # IdeaStore.database
+    IdeaStore.create("title" => "Baseball", "tags" => "sports", "group" => "travel")
+    IdeaStore.create("title" => "Ice Cream", "tags" => "food", "created_at" => Time.new(2007,11,19,8,37,48,"-06:00"), "group" =>"leisure")
+    IdeaStore.create("title" => "Study", "tags" => "school, sports", "created_at" => Time.now, "group" => "travel")
+    result = IdeaStore.find_by_group("travel")
+    assert_equal 2, result.count
+    assert_equal "Baseball", result.first.title
   end
 
 
