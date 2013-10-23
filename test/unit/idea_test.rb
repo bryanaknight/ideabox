@@ -34,7 +34,8 @@ class IdeaTest < Minitest::Test
                     "rank"        => 0,
                     "tags"        => "fun",
                     "updated_at"  => "10/21/2013",
-                    "created_at"  => "10/22/2013"
+                    "created_at"  => "10/22/2013",
+                    "group"       => "Groupless"
                   }
     assert_equal expected, idea.to_h
   end
@@ -53,12 +54,27 @@ class IdeaTest < Minitest::Test
     assert_equal 0, idea1.rank
   end
 
-  # def test_created_at_day_formats_date
-  #   skip
-  #   idea = Idea.new
-  #   result = idea.created_at_day(2013-10-21 22:30:22 -0600)
-  #   assert_equal 0, result
-  # end
-  #getting error for colon in the date argument
+  def test_it_gets_assigned_to_a_group
+    idea = Idea.new("title"       => "pool party",
+                    "description" => "Splash around and drink margs",
+                    "id"          => "1",
+                    "tags"        => "fun",
+                    "updated_at"  => "10/21/2013",
+                    "created_at"  => "10/22/2013",
+                    "group"       => "travel"
+                    )
+    assert_equal "travel", idea.group
+  end
+
+  def test_it_gets_assigned_to_default_group_when_no_group_assigned
+    idea = Idea.new("title"       => "pool party",
+                    "description" => "Splash around and drink margs",
+                    "id"          => "1",
+                    "tags"        => "fun",
+                    "updated_at"  => "10/21/2013",
+                    "created_at"  => "10/22/2013",
+                    )
+    assert_equal "Groupless", idea.group
+  end
 
 end

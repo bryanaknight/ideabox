@@ -1,7 +1,7 @@
 class Idea
   include Comparable
   attr_reader :title, :description, :rank, :id, :tags
-  attr_accessor :created_at, :updated_at
+  attr_accessor :created_at, :updated_at, :group
 
   def initialize(attributes = {})
     @title = attributes["title"]
@@ -11,6 +11,7 @@ class Idea
     @tags = attributes["tags"]
     @created_at = attributes["created_at"] ||= Time.now
     @updated_at = attributes["updated_at"] ||= Time.now
+    @group = attributes["group"] ||= "Groupless"
   end
 
   def save
@@ -24,7 +25,8 @@ class Idea
       "rank" => rank,
       "tags" => tags,
       "updated_at" => updated_at,
-      "created_at" => created_at
+      "created_at" => created_at,
+      "group" => group
     }
   end
 

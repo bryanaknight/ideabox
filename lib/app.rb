@@ -57,8 +57,9 @@ class IdeaBox < Sinatra::Base
   end
 
   get '/dates' do
-    dates = IdeaStore.days
-    erb :dates, locals: {dates: dates, ideas: IdeaStore}
+    day_of_week = params[:search_day]
+    ideas = IdeaStore.find_by_wday(day_of_week)
+    erb :dates, locals: {ideas: ideas, day_of_week: day_of_week }
   end
 
 end

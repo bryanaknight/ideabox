@@ -65,15 +65,30 @@ class IdeaStore
         idea.created_at_day(idea.created_at)
       end.uniq
     end
+    
+    def day_string_to_num(week_day)
+     if week_day == "Monday"
+        day_num = 1
+      elsif week_day == "Tuesday"
+        day_num = 2
+      elsif week_day == "Wednesday"
+        day_num = 3
+      elsif week_day == "Thursday"
+        day_num = 4
+      elsif week_day == "Friday"
+        day_num = 5  
+      elsif week_day == "Saturday"
+        day_num = 6    
+      else
+        day_num = 7
+      end
+    end
 
-    # def date_hash
-    #   days.each_with_object({}) do |date, hash|
-    #     hash[date] = all.select do |idea|
-    #       idea.to_h["created_at"].strftime("%m/%d/%Y").include?(DateTime.parse(idea.created_at.to_s).strftime("%m/%d/%Y"))
-    #     end
-    #   end
-    # end
-    # LISTING ALL IDEAS IN DB, NOT JUST ONES WITH MATCHING DATE
+    def find_by_wday(week_day)
+      all.select do |idea| 
+        idea.created_at.wday == day_string_to_num(week_day)
+      end
+    end
 
     def tag_hash
       all_tags.each_with_object({}) do |tag, hash|

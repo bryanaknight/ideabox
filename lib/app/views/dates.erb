@@ -1,21 +1,17 @@
-<html>
-<title>Ideabox</title>
-<style>
-    body {
-      background-color: red; 
-      color: green;
-      }
-</style>
-
 <h1>Ideabox</h1>
 
 <h3>Ideas by Date</h3>
-
-  <% dates.each do |date| %>
-      Date: <%= date %> <br />
-        <% ideas.date_hash[date].each do |idea| %>
-          <ul><li><%= idea.title %></li></ul>
-        <% end %>
+      
+  <%= "#{ideas.count} Search Results for #{day_of_week}" %>
+    
+   <ul> 
+    <% ideas.each do |idea| %>
+      <li>
+      Title: <%= idea.title %><br/>
+      Description: <%= idea.description %><br/>
+      Tag: <%= idea.tags%><br/>
+      Created at: <%= idea.created_at.strftime("%-m/%e/%y") %><br/>
+      Updated at: <%= idea.updated_at.strftime("%-m/%e/%y") %><br/>
+     </li>
   <% end %>
-
-</html>
+  </ul>

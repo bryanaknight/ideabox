@@ -50,11 +50,6 @@ class IdeaStoreTest <Minitest::Test
     assert_equal ["10/21/2013", "11/19/2007"], result
   end
 
-  def test_date_hash
-    skip
-    result = IdeaStore.date_hash  
-    assert_equal 0, result
-  end
 
   
 end

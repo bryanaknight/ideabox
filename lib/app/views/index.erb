@@ -1,19 +1,21 @@
-<head>
-  <title>IdeaBox</title>
-  <style type= "text/css">
-   
-  </style>
-</head>
-<h1>IdeaBox</h1>
-<p>
-  <img src="http://www.ideachampions.com/weblogs/ideas-in-box.jpg" width= "120" height="100">
-</p>
+  
+
+
+    <h1 align="center" style="margin-top:70px;">
+    <p><i class="icon-fire"></i></p>
+    Ideabox</h1>
+
+    <img src="http://www.idea-sandbox.com/blog_images/lightbulb-o-lantern.jpg" class="logo">
+
+    <h4 style="color:black;margin-bottom:40px;" align="center">Store your ideas in a virtual box...at your own risk</h4>
+
+
 <%= erb :form, locals: {idea: idea} %>
    <h3>Existing Ideas</h3>
 
-    <ul>
+    <ul class="ideas">
       <% ideas.each do |idea| %>
-        <li>
+          <li>
           <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
           <input type='submit' value="Like!"/>
           </form>

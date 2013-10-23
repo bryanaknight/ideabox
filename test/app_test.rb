@@ -33,6 +33,13 @@ class AppTest < Minitest::Test
     assert (last_response.body =~ /IdeaBox/)
   end
 
+  def test_create_new_idea
+    post "/", {idea: {title: "exercise", description: "Sign up for stick fighting classes"}}
+    idea = IdeaStore.all.first
+    assert_equal "exercise", idea.title
+    assert_equal "Sign up for stick fighting classes", idea.description
+  end
+
   def teardown
     IdeaStore.destroy_database
   end

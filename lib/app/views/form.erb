@@ -12,6 +12,18 @@
   <input type='text' name='idea[title]' value="<%= idea.title %>"/> Name <br/>
   <textarea name='idea[description]'><%= idea.description %></textarea> Description <br/>
   <textarea name='idea[tags]'><%= idea.tags %></textarea> Tag <br/>
+  <form action = "dropdown">
+  <select name="group">
+  <option value="Groupless">Groupless</option>
+  <option value="Travel">Travel</option>
+  <option value="Home and Garden">Home and Garden</option>
+  <option value="Culinary">Culinary</option>
+  <option value="Business">Business</option>
+  <option value="Shopping">Shopping</option>
+  <option value="Fitness">Fitness</option>
+  <option value="Health and Wellness">Health and Wellness</option>
+</select>
+</form>
   <input type='submit'/>
 </form>
 
@@ -23,6 +35,19 @@
 <form action='/tags' method='GET'>
 <button type='submit'>Tags</button>
 </form>
+
+<form action = '/dates'>
+  <option value="Sunday">Sunday</option>
+  <option value="Monday">Monday</option>
+  <option value="Tuesday">Tuesday</option>
+  <option value="Wednesday">Wednesday</option>
+  <option value="Thursday">Thursday</option>
+  <option value="Friday">Friday</option>
+  <option value="Saturday">Saturday</option>
+</select>
+<button type='submit'>See ideas!</button>
+</form>
+
 </form>
 
 
