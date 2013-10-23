@@ -63,7 +63,7 @@ class IdeaBox < Sinatra::Base
   end
 
   get '/groups' do
-    matching_ideas = IdeaStore.find_by_group(params[:groups])
+    matching_ideas = IdeaStore.find_by_group(params[:group])
     erb :groups, locals: {matching_ideas: matching_ideas}
   end
 

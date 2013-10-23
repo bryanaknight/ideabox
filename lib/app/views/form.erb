@@ -13,44 +13,52 @@
   <textarea name='idea[description]'><%= idea.description %></textarea> Description <br/>
   <textarea name='idea[tags]'><%= idea.tags %></textarea> Tag <br/>
 
-  <select name="idea[groups]">
-  <option value="Groupless">Groupless</option>
-  <option value="Travel">Travel</option>
-  <option value="Home and Garden">Home and Garden</option>
-  <option value="Culinary">Culinary</option>
-  <option value="Business">Business</option>
-  <option value="Shopping">Shopping</option>
-  <option value="Fitness">Fitness</option>
-  <option value="Health and Wellness">Health and Wellness</option>
-</select><br/>
+<div class="dropdown_idea_form">
+  <select name="group">
+    <option value="Click to Select Group">Click to Select Group</option>
+    <option value="Groupless">Groupless</option>
+    <option value="Travel">Travel</option>
+    <option value="Home and Garden">Home and Garden</option>
+    <option value="Culinary">Culinary</option>
+    <option value="Leisure">Leisure</option>
+    <option value="Business">Business</option>
+    <option value="Shopping">Shopping</option>
+    <option value="Fitness">Fitness</option>
+    <option value="Health and Wellness">Health and Wellness</option>
+  </select><br/>
+  <button type='submit' class='submit_button'/>Submit</button>
+  </form>
+</div>
 
-  <input type='submit'/>
+  <%unless idea.id %>
+
+<form action='/tags' method='GET'>
+<button type='submit' class='spooky'style="background-color:lightgreen">See all ideas by Tag</button>
 </form>
 
 <form action='/lookup' method='GET'>
 <input type= 'text' name = 'lookup'>
-<input type='submit' value ='Search by Keyword or Phrase'/>
+<button type='submit' class='search_button_spooky'>Search by phrase or keyword</button>
 </form>
 
+<div class="dropdown">
 <form action = '/groups' method='GET' style='display: inline'>
- <select name="groups">
+ <select name="group">
   <option value="Groupless">Groupless</option>
   <option value="Travel">Travel</option>
   <option value="Home and Garden">Home and Garden</option>
   <option value="Culinary">Culinary</option>
+  <option value="Leisure">Leisure</option>
   <option value="Business">Business</option>
   <option value="Shopping">Shopping</option>
   <option value="Fitness">Fitness</option>
   <option value="Health and Wellness">Health and Wellness</option>
 </select>
-<input type='submit' value ='Search by Group'/>
+<button type='submit' class='dropdown_button'>SEE  IDEAS</button>
 </form>
+</div>
 
-
-<form action='/tags' method='GET'>
-<button type='submit'>Tags</button>
-</form>
-
+<div class="dropdown">
 <form action = '/dates'>
   <select name="search_day">
   <option value="Sunday">Sunday</option>
@@ -61,11 +69,13 @@
   <option value="Friday">Friday</option>
   <option value="Saturday">Saturday</option>
 </select>
-<button type='submit'>See ideas by day!</button>
+<button type='submit' class='dropdown_button'>SEE IDEAS</button>
 </form>
+</div>
 
 
 </form>
+<%end%>
 
 
 
