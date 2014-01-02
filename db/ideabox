@@ -1,13 +1,5 @@
 ---
 ideas:
-- title: Halloween Party
-  description: Trick or Treating then dancing
-  rank: 0
-  tags: Fun, Friends
-  updated_at: 2013-10-23 13:28:38.000000000 -06:00
-  created_at: 2013-10-22 13:27:16.000000000 -06:00
-  group: Groupless
-  groups: Home and Garden
 - title: Pumpkin Carving
   description: Carve pumpkins!
   rank: 2
@@ -29,13 +21,6 @@ ideas:
   updated_at: 2013-10-23 13:31:53.000000000 -06:00
   created_at: 2013-10-23 13:30:06.000000000 -06:00
   group: Home and Garden
-- title: Decorations
-  description: Hang Halloween Decorations
-  rank: 0
-  tags: ''
-  updated_at: 2013-10-23 14:21:57.000000000 -06:00
-  created_at: 2013-10-23 14:21:57.000000000 -06:00
-  group: Home and Garden
 - title: Candy
   description: buy Halloween Candy
   rank: 0
@@ -43,10 +28,17 @@ ideas:
   updated_at: 2013-10-23 15:48:52.000000000 -06:00
   created_at: 2013-10-23 15:48:52.000000000 -06:00
   group: Groupless
-- title: Andy
-  description: Andy is awesome
+- title: Bobbing for apples
+  description: Fun halloween/fall activity
+  rank: 1
+  tags: Fun, Food, Friends
+  updated_at: 2013-10-24 09:07:25.000000000 -06:00
+  created_at: 2013-10-24 09:07:19.000000000 -06:00
+  group: Groupless
+- title: hi
+  description: hi
   rank: 0
-  tags: '#friends'
-  updated_at: 2013-10-23 16:51:49.000000000 -06:00
-  created_at: 2013-10-23 16:51:49.000000000 -06:00
+  tags: hi
+  updated_at: 2013-10-24 10:18:14.000000000 -06:00
+  created_at: 2013-10-24 10:18:14.000000000 -06:00
   group: Groupless

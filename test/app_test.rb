@@ -40,6 +40,13 @@ class AppTest < Minitest::Test
     assert_equal "Sign up for stick fighting classes", idea.description
   end
 
+  def test_delete_will_delete_an_idea
+    idea = IdeaStore.new
+    delete "/#{id}"
+    assert_equal nil, IdeaStore.find(idea.id)
+    assert_redirected_to '/'
+  end
+  
   def teardown
     IdeaStore.destroy_database
   end

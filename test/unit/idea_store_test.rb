@@ -32,7 +32,6 @@ class IdeaStoreTest <Minitest::Test
     result = IdeaStore.lookup("food")
     assert_equal 1, result.count
   end
-  #getting error for include? in method, but search works
 
   def test_it_displays_all_tags
     result = IdeaStore.all_tags  

@@ -1,37 +1,10 @@
-<div class="header">
-<div class="idea_submission">
-<form action='/<%= idea.id %>' method='POST'>
-  <p>
-    <% if idea.id %>
-      Edit your Idea:
-    <% else %>
-      Your Idea:
-    <% end %>
-  </p>
-  <% if idea.id %>
-    <input type="hidden" name="_method" value="PUT" />
-  <% end %>
-  <input type='text' name='idea[title]' value="<%= idea.title %>"/> Name <br/>
-  <textarea name='idea[description]'><%= idea.description %></textarea> Description <br/>
-  <textarea name='idea[tags]'><%= idea.tags %></textarea> Tag <br/>
+<h1 align="center" style="margin-top:70px;">
+  <p><i class="icon-fire"></i></p>
+  Ideabox</h1>
 
-<div class="dropdown_idea_form">
-  <select name="group">
-    <option value="Click to Select Group">Click to Select Group</option>
-    <option value="Groupless">Groupless</option>
-    <option value="Travel">Travel</option>
-    <option value="Home and Garden">Home and Garden</option>
-    <option value="Culinary">Culinary</option>
-    <option value="Leisure">Leisure</option>
-    <option value="Business">Business</option>
-    <option value="Shopping">Shopping</option>
-    <option value="Fitness">Fitness</option>
-    <option value="Health and Wellness">Health and Wellness</option>
-  </select><br/>
-  <button type='submit' class='submit_button'/>Submit</button>
-  </form>
-</div>
-</div>
+  <img src="http://www.idea-sandbox.com/blog_images/lightbulb-o-lantern.jpg" class="logo">
+
+  <h4 style="color:black;margin-bottom:40px;" align="center">Store your ideas in a virtual box...if you dare</h4>
 
   <%unless idea.id %>
 
@@ -80,6 +53,51 @@
 
 </form>
 </div>
+
+<div class="header">
+<div class="idea_submission">
+<form action='/<%= idea.id %>' method='POST'>
+  <p>
+    <% if idea.id %>
+      Edit your Idea:
+    <% else %>
+      <h2>Create an Idea:</h2>
+    <% end %>
+  </p>
+  <% if idea.id %>
+    <input type="hidden" name="_method" value="PUT" />
+  <% end %>
+  <fieldset>
+    <label for="idea[title]">Name:</label>
+    <textarea name='idea[title]'><%= idea.title %></textarea>
+  </fieldset>
+  <fieldset>
+    <label for="idea[description]">Description:</label>
+    <textarea name='idea[description]'><%= idea.description %></textarea> 
+  </fieldset>
+  <fieldset>
+    <label for="idea[tags]">Tags:</label>
+    <textarea name='idea[tags]'><%= idea.tags %></textarea> 
+  </fieldset>
+
+<div class="dropdown_idea_form">
+  <select name="group">
+    <option value="Click to Select Group">Click to Select Group</option>
+    <option value="Groupless">Groupless</option>
+    <option value="Travel">Travel</option>
+    <option value="Home and Garden">Home and Garden</option>
+    <option value="Culinary">Culinary</option>
+    <option value="Leisure">Leisure</option>
+    <option value="Business">Business</option>
+    <option value="Shopping">Shopping</option>
+    <option value="Fitness">Fitness</option>
+    <option value="Health and Wellness">Health and Wellness</option>
+  </select><br/>
+  <button type='submit' class='submit_button'/>Submit</button>
+  </form>
+</div>
+</div>
+
 <%end%>
 </div>
 
