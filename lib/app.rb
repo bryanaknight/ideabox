@@ -1,4 +1,6 @@
 require 'bundler'
+require 'faraday'
+require 'json'
 require_relative 'idea_box'
 Bundler.require
 
@@ -14,7 +16,9 @@ class IdeaBox < Sinatra::Base
   end
 
   get '/' do
-    erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new}
+    data = Faraday.get("http://en.seedfinder.eu/api/json/threadfinder.json")
+    data_json = JSON.parse(data.body)
+    erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new, data: data_json}
   end
 
   post '/' do 
